@@ -441,7 +441,7 @@ def collect_java_info(target, ctx, semantics, ide_info, ide_info_file, output_gr
     jars = [library_artifact(output) for output in java.outputs.jars]
     class_jars = [output.class_jar for output in java.outputs.jars if output and output.class_jar]
     output_jars = [jar for output in java.outputs.jars for jar in jars_from_output(output)]
-    resolve_files = depset(output_jars)
+    resolve_files = depset()
     compile_files = depset(class_jars)
 
     gen_jars = []
